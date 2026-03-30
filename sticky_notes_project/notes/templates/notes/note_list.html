@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}All Notes | Sticky Notes{% endblock %}
+
+{% block content %}
+<section class="panel panel-spaced">
+    <div class="section-heading">
+        <div>
+            <p class="section-label">Dashboard</p>
+            <h2>All Notes</h2>
+        </div>
+        <a class="button button-secondary" href="{% url 'note_create' %}">Create note</a>
+    </div>
+
+    {% if notes %}
+    <div class="notes-grid">
+        {% for note in notes %}
+        <article class="note-card">
+            <div class="note-card-top">
+                <span class="note-badge">Note {{ forloop.counter }}</span>
+                <span class="note-date">{{ note.created_at|date:"d M Y" }}</span>
+            </div>
+            <h3><a href="{% url 'note_detail' pk=note.pk %}">{{ note.title }}</a></h3>
+            <p>{{ note.content|truncatechars:150 }}</p>
+            <div class="card-actions">
+                <a class="text-link" href="{% url 'note_detail' pk=note.pk %}">Open</a>
+                <a class="text-link" href="{% url 'note_update' pk=note.pk %}">Edit</a>
+                <a class="text-link text-link-danger" href="{% url 'note_delete' pk=note.pk %}">Delete</a>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state">
+        <h3>No notes yet</h3>
+        <p>Create your first note to start organising ideas, reminders, and important tasks.</p>
+        <a class="button button-primary" href="{% url 'note_create' %}">Create your first note</a>
+    </div>
+    {% endif %}
+</section>
+{% endblock %}

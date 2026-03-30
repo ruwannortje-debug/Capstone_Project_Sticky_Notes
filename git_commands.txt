@@ -1,0 +1,16 @@
+cd sticky_notes_project
+git init
+git add .
+git commit -m "Initial project commit"
+
+git checkout -b docs
+git add notes/models.py notes/forms.py notes/views.py notes/urls.py sticky_notes/settings.py docs
+git commit -m "Add documentation and Sphinx files"
+
+git checkout -b container main
+git add Dockerfile requirements.txt .env.example
+git commit -m "Add Docker support"
+
+git checkout main
+git merge docs
+git merge container

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sticky Notes Documentation</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px; color: #222; }
+    h1, h2 { color: #1f3b5b; }
+    .card { background: #f7f9fc; border: 1px solid #dbe3ee; border-radius: 12px; padding: 20px; max-width: 900px; }
+    code { background: #eef2f7; padding: 2px 6px; border-radius: 6px; }
+    ul { padding-left: 20px; }
+    a { color: #0b63ce; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Sticky Notes Documentation</h1>
+    <p>Welcome to the documentation for the Sticky Notes Django application. This guide covers the project structure, setup requirements, and the main modules used to create, display, update, and delete notes.</p>
+
+    <h2>Documentation Contents</h2>
+    <ul>
+      <li><a href="modules.html">Project Modules</a></li>
+    </ul>
+
+    <h2>Project Summary</h2>
+    <p>Sticky Notes is a lightweight Django web application that lets users manage short notes in a clean interface.</p>
+    <ul>
+      <li>Django models for note storage</li>
+      <li>Model forms for creating and editing notes</li>
+      <li>Function-based views for CRUD operations</li>
+      <li>URL routing for the notes workflow</li>
+      <li>Templates and static styling for the user interface</li>
+    </ul>
+
+    <h2>How to Build the HTML Documentation</h2>
+    <p>From the <code>docs</code> folder, run:</p>
+    <ul>
+      <li><code>make.bat html</code> on Windows</li>
+      <li><code>make html</code> on Linux or macOS</li>
+    </ul>
+    <p>The generated HTML output will be available in <code>docs/build/html</code>.</p>
+  </div>
+</body>
+</html>
